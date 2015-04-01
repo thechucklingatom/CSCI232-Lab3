@@ -6,8 +6,8 @@
 package csci232.lab3;
 
 /**
- *
- * @author thech_000
+ * @author Mathew Gostnell
+ * @author Robert Putnam
  */
 public class AdjacencyMatrix {
     private int[][] adjacency;;
