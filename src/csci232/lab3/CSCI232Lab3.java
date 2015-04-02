@@ -26,9 +26,19 @@ public class CSCI232Lab3 {
             System.out.print("Please enter a size greater than 3 for the adjacency matrix: ");
             n = getInt();
         }while(n < 3);
+        
+        //create the matrix
+        AdjacencyMatrix ourMatrix = new AdjacencyMatrix(n);
+        
+        //figure out how to fill it.
         System.out.print("Do you want to create the matrix yourself?   ([y]es / [n]o)");
         char a = getChar();
-        AdjacencyMatrix ourMatrix = new AdjacencyMatrix(n);
+        if(a == 'y'){
+            fillMatrix(ourMatrix);
+        }else{
+            ourMatrix.randFill();
+        }
+        
 
         do {
             System.out.println("************xX_MENU_Xx************");
@@ -52,6 +62,11 @@ public class CSCI232Lab3 {
                     }while(n < 3);
                     System.out.print("Do you want to create the matrix yourself?   ([y]es / [n]o)");
                     a = getChar();
+                    if(a == 'y'){
+                        fillMatrix(ourMatrix);
+                    }else{
+                        ourMatrix.randFill();
+                    }
                     ourMatrix = new AdjacencyMatrix(n);
                     break;
                 case 'x':
@@ -61,6 +76,25 @@ public class CSCI232Lab3 {
                     break;
             }
         } while (true);
+    }
+    
+    public static void fillMatrix(AdjacencyMatrix toFill) throws IOException{
+        int numToFill;
+            do{
+                System.out.print("Please enter how many edges you would like to add (minimum 3): ");
+                numToFill = getInt();
+            }while(numToFill < 2);
+            //fill it
+            int val, xpos, ypos;
+            for(int i = 0; i < numToFill; i++){
+                System.out.print("Please enter the value to enter: ");
+                val = getInt();
+                System.out.print("Please enter the x-position to enter: ");
+                xpos = getInt();
+                System.out.print("Please enter the y-position to enter: ");
+                ypos = getInt();
+                toFill.addToMatrix(val, xpos, ypos);
+            }
     }
     
     public static String getStringMessage() throws IOException {        
