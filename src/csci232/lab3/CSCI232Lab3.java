@@ -60,6 +60,9 @@ public class CSCI232Lab3 {
                         System.out.print("Please enter a size greater than 3 for the adjacency matrix: ");
                         n = getInt();
                     }while(n < 3);
+                    
+                    ourMatrix = new AdjacencyMatrix(n);
+                    
                     System.out.print("Do you want to create the matrix yourself?   ([y]es / [n]o)");
                     a = getChar();
                     if(a == 'y'){
@@ -67,7 +70,7 @@ public class CSCI232Lab3 {
                     }else{
                         ourMatrix.randFill();
                     }
-                    ourMatrix = new AdjacencyMatrix(n);
+                    
                     break;
                 case 'x':
                 case 'X':
