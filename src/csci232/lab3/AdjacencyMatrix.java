@@ -19,7 +19,13 @@ public class AdjacencyMatrix {
     }
     
     public void printMatrix(){
-        
+        System.out.println("Adjacency Matrix:\n\t");
+        for(int i = 0; i < adjacency.length; i++){
+            System.out.printf("%c   ", 65 + i);
+        }
+        for(int i = 0; i < adjacency.length; i++){
+            System.out.printf("====");
+        }
     }
     
     public void addToMatrix(int value, int xpos, int ypos){
