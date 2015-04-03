@@ -81,6 +81,7 @@ public class CSCI232Lab3 {
         } while (true);
     }
     
+    //fills our matrix
     public static void fillMatrix(AdjacencyMatrix toFill) throws IOException{
         int numToFill;
             do{
@@ -92,11 +93,14 @@ public class CSCI232Lab3 {
             for(int i = 0; i < numToFill; i++){
                 System.out.print("Please enter the value to enter: ");
                 val = getInt();
-                System.out.print("Please enter the x-position to enter: ");
+                System.out.printf("Please enter the x-position between 1 & %d: ", toFill.getLength());
                 xpos = getInt();
-                System.out.print("Please enter the y-position to enter: ");
+                System.out.printf("Please enter the y-position between 1 & %d: ", toFill.getLength());
                 ypos = getInt();
+                //(1,1) is our top left
                 toFill.addToMatrix(val, xpos, ypos);
+                //prints to show what it looks like
+                toFill.printMatrix();
             }
     }
     
